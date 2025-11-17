@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="projetfinal1.css">
+</head>
+<body>
+    <script src="projetfinal1.js"></script>
+  <header class="menu">
+        <div class="photo">Isma Wadson </div>
+
+    <nav class="accessoires">
+        <ul>
+        <a href="#accueil" class="active">Acceuil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+        </ul>
+    </nav>
+    </header>
+     
+   <main>
+    <section id="acceuil" class="Description-section">
+        <div class="Descriptions-section">
+            <h2>
+                je suis Isma Wadson, un jeune passionné par la technologie et particulièrement le developpement web.
+            </h2>  
+            <a href="#projets" class="button">mes projets</a>
+        </div>
+        <div class="image">
+            <img src="/image/developpeur-web.jpg">
+        </div>  
+        
+    </section>
+
+    <hr>
+
+    <section id="apropos" class="about-section">
+        <h3 class="titre-section">A propos</h3>
+
+        <div class="contenu-apropos">
+            <div class="texte-apropos">
+                
+            
+                <a href="cv/cv.pdf" download class="button secondaire-button">Telecharger mon Cv</a>
+            </div>
+            <div class="about-profil">
+                <p> Je m'appelle Isma wadson, passionné par la technologie notamment la création de sites web, cyberscécurité et le réseaux informatiques</p>
+                <p> Je suis actuellement étudiant en developpement web dans le but d'améliorer mes Compétences en "Javascript", "HTML" et "CSS".</p>
+                <p> J'adore le métier de developpeur car ça permet de transformer des idées en quelques choses de concret.</p>
+            
+               <img src="/image/photo-profil.jpg">
+            </div>
+        </div>
+    </section>
+   </main>
+
+     <hr>
+
+    <main>
+    <section id="projects-section" class="projects-section">
+        <h3 class="titre-section">Mes projets</h3>
+
+        <div class="projects-grid">
+
+            <article class="project-view1">
+                <p class="description-project1">
+                    un projet de calculateur pour prêt hypothécaire.
+                </p>
+                <div class="project1">
+                    <span class="view">HTML</span>
+                    <span class="view">JS</span>
+                </div>
+                <a href="https://github.com/wadson003/projet1/blob/main/calculateur.html "class="button view-button">voir</a>
+            </article>
+
+            <article class="project-view2">
+                <p class="description-project2">
+                    un projet de manipulation des dates
+                </p>
+                <div class="project2">
+                    <span class="view">HTML</span>
+                    <span class="view">JS</span>
+                </div>
+                <a href="https://github.com/wadson003/Projet-date/blob/main/exercise3.html" id="project-scroll-button" class="button view-button">voir</a>
+            </article>
+        </div>
+    </section>
+            
+          <hr>
+    
+    <section id="Competences" class="Competences-section">
+        <h3 class="titre-section">Mes Compétences</h3>
+
+
+         <div class="Competences-container">
+
+            <div class="colonne soft-competences">
+                <h4 class="titre-colonne">soft Compétences</h4>
+
+                <div class="item-competences">
+                    <p class="nom-competences">Gestion de projet</p>
+                    <div class="bar-de-progres-container"><div class="progres-bar" style="width: 70%;"></div></div>
+                </div>
+
+                <div class="item-competences">
+                    <p class="nom-competences">Adaptabilité</p>
+                    <div class="bar-de-progres-container"><div class="progres-bar" style="width: 80%;"></div></div>"
+                </div>
+
+                <div class="item-competences">
+                    <p class="nom-competences">Résolution de problèmes</p>
+                    <div class="bar-de-progres-container"><div class="progres-bar" style="width: 90%;"></div></div>"
+                </div>
+            </div>
+
+
+                <div class="colonne hard-competences">
+                    <h4 class="titre-colonne">hard-compétences</h4>
+
+                    <div class="item-competences">
+                    <p class="nom-competences">HTML</p>
+                    <div class="bar-de-progres-container"><div class="progres-bar" style="width: 90%;"></div></div>"
+                </div>
+
+
+                <div class="item-competences">
+                    <p class="nom-competences">CSS</p>
+                    <div class="bar-de-progres-container"><div class="progres-bar" style="width: 80%;"></div></div>"
+                </div>
+
+
+                <div class="item-competences">
+                    <p class="nom-competences">Javascript</p>
+                    <div class="bar-de-progres-container"><div class="progres-bar" style="width: 75%;"></div></div>"
+                </div>
+                </div>
+
+
+            </div>
+        </section>   
+
+        <hr>
+        
+        <section id="contact-form" class="contact-section"> 
+            <div class="Contact-container">
+                <h2>Vous avez un "projet en tête"? N'hésitez pas  á me contacter</h2>
+          <form action="#"  method="post"  class="formulaire_de_contact" >
+            <div class="formulaire_de_ligne">
+                <div class="formulaire_de_groupe">
+                    <label for="nom">Votre nom</label>
+                    <input type="text" id="nom"  name="nom" required>
+                </div>
+                <div class="formulaire_de_groupe">
+                    <label for="Prenom">Votre prénom</label>
+                    <input type="text" id="prenom"  name="prenom" required>
+                </div>
+            </div>
+
+
+            <div class="formulaire_de_groupe full-width">
+                <label for="email">Votre email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="formulaire_de_groupe full-width">
+                <label for="sujet">Votre sujet</label>
+                <input type="text" id="sujet" name="sujet">
+            </div>
+
+            <div class="formulaire_de_groupe full-width">
+                <textarea name="message" id="message"  rows="6"  placeholder=""></textarea>
+            </div>
+
+            <button type="submit" class="button submit-button" class="voir-projet-button">Envoyer</button>
+
+            </form>
+         </div>    
+            </section>
+
+            <footer>
+                <div class="footer-content">
+                    <p>Design par Wadson avec HTML CSS JS</p>
+                    <p>Tous droits réservés. &copy; 2025</p>
+                    <a href="#" class="edit-icon"></a>
+                </div>
+            </footer>
+</body>
+</html>

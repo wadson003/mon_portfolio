@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice 3 : Manipulation de dates (Date)</h1>
+
+    <form id="dateForm">
+        <label for="dateSaisie">Saisissez une date au format **JJ-MM-AAAA** :</label>
+        <input type="text" id="dateSaisie" name="dateSaisie" placeholder="ex: 09-11-2025" pattern="\d{2}-\d{2}-\d{4}" required>
+        <button type="submit">Traiter la Date</button>
+    </form>
+
+    <hr>
+
+    <h2>Résultats de la Conversion</h2>
+    <div class="resultat">
+        <p id="jour"></p>
+        <p id="mois"></p>
+        <p id="annee"></p>
+    </div>
+
+    <hr><h2>Différence avec la Date Actuelle</h2>
+    <div id="difference">
+        <p id="differenceEnJours"></p>
+    </div>
+
+    <script>
+    
+        document.getElementById('dateForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const dateInput = document.getElementById('dateSaisie').value;
+            
+            const parties = dateInput.split('-'); 
+            
+            
+            const annee = parseInt(parties[2]);
+            const moisZeroIndexe = parseInt(parties[1]) - 1;const jour = parseInt(parties[0]);
+            
+    
+            const dateObj = new Date(annee, moisZeroIndexe, jour);
+
+            
+            if (dateObj.getDate() !== jour || dateObj.getMonth() !== moisZeroIndexe || dateObj.getFullYear() !== annee) {
+                document.getElementById('jour').textContent = "Erreur: La date saisie est invalide.";
+                document.getElementById('mois').textContent = "";
+                document.getElementById('annee').textContent = "";
+                document.getElementById('differenceEnJours').textContent = "";
+                return;
+            }
+            
+            
+            const anneeAffichee = dateObj.getFullYear();
+        
+            const moisAffiche = dateObj.getMonth() + 1; 
+            const jourAffiche = dateObj.getDate();
+            
+            
+            document.getElementById('jour').textContent = `Jour : ${jourAffiche}`;
+            document.getElementById('mois').textContent = `Mois : ${moisAffiche}`;
+            document.getElementById('annee').textContent = `Année : ${anneeAffichee}`;
+
+    
+            
+            const dateActuelle = new Date();
+            
+            
+
+            dateActuelle.setHours(0, 0, 0, 0); 
+            dateObj.setHours(0, 0, 0, 0); 
+
+            
+            const differenceEnMs = dateActuelle.getTime() - dateObj.getTime();
+            
+            
+            const msParJour = 1000 * 60 * 60 * 24;
+            
+            const differenceJours = Math.round(differenceEnMs / msParJour); 
+
+            let resultatTexte;
+            if (differenceJours === 0) {
+                resultatTexte = "La date saisie est **Aujourd'hui**.";
+            } else if (differenceJours > 0) {
+                resultatTexte = `Il s'est écoulé **${differenceJours}** jour${differenceJours > 1 ? 's' : ''} depuis cette date (passée).`;
+            } else {
+                const joursRestants = Math.abs(differenceJours);
+                resultatTexte = `Il reste **${joursRestants}** jour${joursRestants > 1 ? 's' : ''} avant cette date (future).`;
+            }
+
+            
+            document.getElementById('differenceEnJours').innerHTML = resultatTexte;
+        });
+
+    </script>
+
+
+
+</body>
+</html>

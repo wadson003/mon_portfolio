@@ -1,0 +1,40 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+    const scrollButton = document.getElementById('project-scroll-btn');
+
+    const targetSection = document.getElementById('projects-section');
+
+    if (scrollButton && targetSection) {
+        scrollButton.addEventListener('click', function(e) {
+            targetSection.scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    }
+    
+       
+
+
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+    
+            e.preventDefault(); 
+            
+            alert('Merci ! Votre message a été reçu (simulé). Je vous recontacterai bientôt.');
+            
+            contactForm.reset(); 
+        });
+    }
+    
+    const viewButtons = document.querySelectorAll('.voir-projet-btn');
+
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+    
+            console.log("Détails du projet cliqué. Le JavaScript fonctionne !");
+        });
+    });
+
+});
